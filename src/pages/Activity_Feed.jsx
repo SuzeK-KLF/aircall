@@ -1,29 +1,25 @@
 import React, { Component } from "react";
-import { getAllActivities } from "../utils/api";
+import { getAllActivitiesUrl } from "../utils/api";
 
 const ActivityFeed = () => {
   const [list, setList] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
 
-  React.useFocusEffect(
-    useCallback(() => {
-      setLoading(true);
-      let isActive = true;
-
-      const trigger = async () => {
-        const result = await getAllActivities();
-        console.log("result::::::", result);
-        setList(result);
-      };
-
-      if (isActive) trigger();
-      setLoading(false);
-
-      return () => {
-        isActive = false;
-      };
-    }, [list])
-  );
+  React.useEffect(() => {
+    setLoading(true);
+    console.log(getAllActivitiesUrl);
+    fetch(getAllActivitiesUrl)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setList(data);
+      })
+      .catch((err) => {
+        // Handle errors
+        console.error(err);
+      });
+    setLoading(false);
+  }, []);
 
   return <div>Activity Feed</div>;
 };
