@@ -12,8 +12,11 @@
     "build": "webpack --mode production"
   },
   "dependencies": {
+    "antd": "^5.1.2",
+    "axios": "^1.2.2",
     "react": "^16.3.1",
-    "react-dom": "^16.3.1"
+    "react-dom": "^16.3.1",
+    "react-infinite-scroll-component": "^6.1.0"
   },
   "devDependencies": {
     "babel-core": "6.26.*",

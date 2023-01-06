@@ -1,0 +1,8 @@
+.feed {
+    background-color: aqua;
+    display:flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    overflow: auto;
+}
