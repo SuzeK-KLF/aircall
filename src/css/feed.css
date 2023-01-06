@@ -1,8 +1,12 @@
 .feed {
-    background-color: aqua;
+    /* background-color: aqua; */
     display:flex;
     justify-content: center;
     align-items: flex-start;
     height: 100%;
     overflow: auto;
+}
+
+.tab {
+    width: 376px;
 }
