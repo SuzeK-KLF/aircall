@@ -5,7 +5,7 @@ export const BASE_URL = 'https://charming-bat-singlet.cyclic.app/https://cerulea
 
 export const getAllActivitiesUrl = `${BASE_URL}/activities`;
 
-export const getAActivityByIdUrl = (call_id) => {
+export const getActivityByIdUrl = (call_id) => {
     return `${BASE_URL}/activities/${call_id}`;
 }
 
@@ -42,7 +42,6 @@ export const resetActivitiesUrl = `${BASE_URL}/reset`;
 
 const getCompleteUrl = url => {
     const encodedUrl = url;
-    console.log("url: ", url);
     const completeUrl = encodedUrl.indexOf('http') >= 0 ? encodedUrl : `${BASE_URL}${encodedUrl}`;
     return completeUrl;
 }
